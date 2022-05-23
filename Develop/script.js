@@ -28,7 +28,15 @@ function generatePassword() {
   var inputSpecial = prompt("Would you like to include special characters? Enter y or n");
   inputSpecial = inputSpecial.toLowerCase();
 
-  return '';
+  var password = '';
+
+  
+
+  for (var i = 0; i <= inputLength; i++){
+    var randomNumber = Math.floor(Math.random() * lowercase.length);
+    password += lowercase.substring(randomNumber, randomNumber + 1);
+  }
+  return password;
 
 }
 
@@ -37,6 +45,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+  
 
 }
 

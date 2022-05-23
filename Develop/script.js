@@ -11,14 +11,24 @@ function generatePassword() {
   var inputLength = parseInt(prompt("Choose a length between 8 and 128"));
 
   if (inputLength >= 8 && inputLength <= 128) {
-    
 
   } else {
     alert("Password to short!");
   }
 
+  var inputLower = prompt("Would you like to include lowercase letters? Enter y or n");
+  inputLower = inputLower.toLowerCase();
+  
+  var inputUpper = prompt("Would you like to include uppercase letters? Enter y or n");
+  inputUpper = inputUpper.toLowerCase();
 
-  var inputChars = prompt("Would you like to include lowercase letters? Enter y or n");
+  var inputNumbers = prompt("Would you like to include numbers? Enter y or n");
+  inputNumbers = inputNumbers.toLowerCase();
+
+  var inputSpecial = prompt("Would you like to include special characters? Enter y or n");
+  inputSpecial = inputSpecial.toLowerCase();
+
+  return '';
 
 }
 

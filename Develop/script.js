@@ -30,12 +30,15 @@ function generatePassword() {
 
   var password = '';
 
+  var userPreference = lowercase + uppercase;
+  console.log(userPreference);
   
 
-  for (var i = 0; i <= inputLength; i++){
-    var randomNumber = Math.floor(Math.random() * lowercase.length);
-    password += lowercase.substring(randomNumber, randomNumber + 1);
+  for (var i = 0; i < inputLength; i++){
+    var randomNumber = Math.floor(Math.random() * userPreference.length);
+    password += userPreference.substring(randomNumber, randomNumber + 1);
   }
+
   return password;
 
 }

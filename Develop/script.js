@@ -18,16 +18,17 @@ function generatePassword() {
 
   // Prompts user for the following password preferences
   var inputLower = prompt("Would you like to include lowercase letters? Enter y or n");
-  inputLower = inputLower.toLowerCase();
+  inputLower = inputLower[0].toLowerCase();
+  console.log(inputLower);
   
   var inputUpper = prompt("Would you like to include uppercase letters? Enter y or n");
-  inputUpper = inputUpper.toLowerCase();
+  inputUpper = inputUpper[0].toLowerCase();
 
   var inputNumbers = prompt("Would you like to include numbers? Enter y or n");
-  inputNumbers = inputNumbers.toLowerCase();
+  inputNumbers = inputNumbers[0].toLowerCase();
 
   var inputSpecial = prompt("Would you like to include special characters? Enter y or n");
-  inputSpecial = inputSpecial.toLowerCase();
+  inputSpecial = inputSpecial[0].toLowerCase();
 
   var password = '';
   var userPreference = '';

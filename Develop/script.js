@@ -17,17 +17,16 @@ function generatePassword() {
   }
 
   // Prompts user for the following password preferences
-  var inputLower = prompt("Would you like to include lowercase letters? Enter y or n");
+  var inputLower = prompt("Would you like to include lowercase letters? Enter Yes or No");
   inputLower = inputLower[0].toLowerCase();
-  console.log(inputLower);
   
-  var inputUpper = prompt("Would you like to include uppercase letters? Enter y or n");
+  var inputUpper = prompt("Would you like to include uppercase letters? Enter Yes or No");
   inputUpper = inputUpper[0].toLowerCase();
 
-  var inputNumbers = prompt("Would you like to include numbers? Enter y or n");
+  var inputNumbers = prompt("Would you like to include numbers? Enter Yes or No");
   inputNumbers = inputNumbers[0].toLowerCase();
 
-  var inputSpecial = prompt("Would you like to include special characters? Enter y or n");
+  var inputSpecial = prompt("Would you like to include special characters? Enter Yes or No");
   inputSpecial = inputSpecial[0].toLowerCase();
 
   var password = '';
@@ -38,6 +37,7 @@ function generatePassword() {
     alert("You have to have some type of character!")
     generatePassword();
   }
+  // Checks all cases and adds the string if user input == 'y'
 
   if (inputLower == 'y'){
     userPreference += lowercase;
@@ -51,24 +51,22 @@ function generatePassword() {
   if(inputSpecial == 'y'){
     userPreference += special;
   }
-  console.log(userPreference);
-
-
+  //creates random password, based on the users preferred length, with the new 
+  // user preference string determined by the users inputs
 
   for (var i = 0; i < inputLength; i++){
     var randomNumber = Math.floor(Math.random() * userPreference.length);
     password += userPreference.substring(randomNumber, randomNumber + 1);
   }
-
-  return password;
+  // alerts and returns password in the box
   
+  alert(password);
+  return password;
 }
-
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 

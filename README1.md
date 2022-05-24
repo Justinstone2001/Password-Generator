@@ -17,6 +17,6 @@ This is a password generator, it produces a password based on the users preferen
 ![Password](./Assets/Password.png)
 
 ## Resources
-[LIVE SITE](https://justinstone2001.github.io/portfolio/)
+[LIVE SITE](https://justinstone2001.github.io/Password-Generator/)
 
-[Repository](https://github.com/Justinstone2001/portfolio)
+[Repository](https://github.com/Justinstone2001/Password-Generator)

@@ -11,11 +11,12 @@ function generatePassword() {
   var inputLength = parseInt(prompt("Choose a length between 8 and 128"));
 
   if (inputLength >= 8 && inputLength <= 128) {
-
+      console.log("placeholder");
   } else {
     alert("Password to short!");
   }
 
+  // Prompts user for the following password preferences
   var inputLower = prompt("Would you like to include lowercase letters? Enter y or n");
   inputLower = inputLower.toLowerCase();
   
@@ -29,10 +30,29 @@ function generatePassword() {
   inputSpecial = inputSpecial.toLowerCase();
 
   var password = '';
+  var userPreference = '';
 
-  var userPreference = lowercase + uppercase;
+  // Checks user input and sets the userPreference string as such
+  if (inputLower == 'n' && inputUpper == 'n' && inputNumbers == 'n' && inputSpecial == 'n'){
+    alert("You have to have some type of character!")
+    generatePassword();
+  }
+
+  if (inputLower == 'y'){
+    userPreference += lowercase;
+  }
+  if (inputUpper == 'y'){
+    userPreference += uppercase;
+  }
+  if(inputNumbers == 'y'){
+    userPreference += numbers;
+  }
+  if(inputSpecial == 'y'){
+    userPreference += special;
+  }
   console.log(userPreference);
-  
+
+
 
   for (var i = 0; i < inputLength; i++){
     var randomNumber = Math.floor(Math.random() * userPreference.length);
@@ -40,17 +60,15 @@ function generatePassword() {
   }
 
   return password;
-
+  
 }
+
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-  
-
 }
 
 // Add event listener to generate button
